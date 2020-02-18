@@ -5,13 +5,13 @@
     <% @tasks.each do |t| %>
       <li>
         <%if t.completed %>
-          <i class="far fa-check-square"></i> <%= link_to t.title, show_path(t.id) %>
+          <i class="far fa-check-square"></i> <%= link_to t.title, show_path(t.id) %> - <%= link_to(destroy_path(t.id), method: :delete, data: { confirm: "Are you sure?" }) { %><i class="far fa-trash-alt"></i><% } %>
         <% else %>
-          <i class="far fa-square"></i> <%= link_to t.title, show_path(t.id) %>
+          <i class="far fa-square"></i> <%= link_to t.title, show_path(t.id) %> - <%= link_to(destroy_path(t.id), method: :delete, data: { confirm: "Are you sure?" }) { %> <i class="far fa-trash-alt"></i> <% } %>
         <% end %>
       </li>
     <% end %>
   </ul>
 
-  <i class="fas fa-plus"></i> <%= link_to 'Add a new task', new_path %>
+  <%= link_to(new_path, class: 'footer') { %> <i class="fas fa-plus"></i> Add a new task<% } %>
 </div>

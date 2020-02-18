@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Edit task</h1>
+
+  <%= form_for(@task) do |f| %>
+    <div class="update-box">
+      Title: <br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="update-box">
+      Description: <br>
+      <%= f.text_area :description %>
+    </div>
+    <%= f.check_box :completed %> Completed <br>
+    <br>
+    <%= f.submit class: 'blue-btn' %>
+  <% end %>
+</div>
